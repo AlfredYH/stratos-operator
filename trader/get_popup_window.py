@@ -11,7 +11,7 @@ import numpy as np
 import json
 import mss
 from pywinauto import Desktop
-from reg import ocr_popup_buysell_bytes
+from .reg import ocr_popup_buysell_bytes
 
 
 def capture_popup_window(class_name="#32770", index=0):

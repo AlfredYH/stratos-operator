@@ -17,7 +17,7 @@ from pywinauto import Application, Desktop, keyboard
 import time
 from datetime import datetime
 import pyperclip
-from reg import ocr_captcha_bytes
+from .reg import ocr_captcha_bytes
 
 
 

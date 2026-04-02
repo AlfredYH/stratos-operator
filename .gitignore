@@ -1,1 +1,3 @@
 client.yaml
+*.log
+__pycache__/

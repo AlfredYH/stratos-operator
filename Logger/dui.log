@@ -1,3 +1,3 @@
-20260328 18:11:09.174[INFO][PID:13816 TID:10876][CWindowWnd::__WndProc, 498]: alert_main_view : 223CBD3C Begin
-20260328 18:59:03.182[INFO][PID:13816 TID:10876][CWindowWnd::__WndProc, 498]: stock_title_dlg : 1484AD6C Begin
-20260328 18:59:03.452[INFO][PID:13816 TID:10876][CWindowWnd::__WndProc, 498]: stock_money_analyse_page : 1FB8F588 Begin
+20260402 22:43:18.580[INFO][PID:6980 TID:33664][CWindowWnd::__WndProc, 498]: alert_main_view : 2108ADEC Begin
+20260402 22:57:22.081[INFO][PID:6980 TID:33664][CWindowWnd::__WndProc, 498]: stock_title_dlg : 2A48D79C Begin
+20260402 22:57:22.331[INFO][PID:6980 TID:33664][CWindowWnd::__WndProc, 498]: stock_money_analyse_page : 2A4B3798 Begin
