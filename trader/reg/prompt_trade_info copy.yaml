@@ -1,0 +1,40 @@
+# DeepSeek-OCR 交易系统识别配置
+ocr_config:
+  model: "deepseek-ocr:3b"
+  options:
+    temperature: 0
+    num_ctx: 4096
+    keep_alive: 0
+  
+  # 结构化 Prompt 定义
+  prompt: |
+    <task_instruction>
+        你是一个专业的金融交易系统 OCR 助手。请从提供的截图中提取交易信息。
+    </task_instruction>
+
+    <field_mapping>
+        请提取以下 5 个字段并映射到统一的键名：
+        - 证券代码 (StockCode): 输入框内的 6 位数字
+        - 证券名称 (StockName): 紧随代码后的中文名称
+        - 价格 (Price): 价格输入框中的数值
+        - 股数 (AvailableShares): "可买"或"可卖"后方的数字
+        - 数量 (OrderQuantity): "买入数量"或"卖出数量"输入框中的数值
+    </field_mapping>
+
+    <constraints>
+        1. **识别逻辑**: 兼容"买入"和"卖出"界面。无论标签显示为"买入"还是"卖出"，均映射到上述统一键名。
+        2. **噪声剔除**: 必须忽略"数量"输入框中的垂直光标（如 '|', 'I', 'l'）。
+        3. **格式要求**: 所有数值字段仅保留数字和点号。
+        4. **严禁幻觉**: 如果图中未发现某字段，请返回空字符串 ""，不要猜测。
+    </constraints>
+
+    <output_format>
+        仅返回 JSON 对象，不包含 Markdown 代码块或任何解释说明。
+        {
+            "StockCode": "",
+            "StockName": "",
+            "Price": "",
+            "AvailableShares": "",
+            "OrderQuantity": ""
+        }
+    </output_format>
