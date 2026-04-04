@@ -67,7 +67,7 @@ def get_position() -> pd.DataFrame:
     app = Application(backend="win32").connect(title_re=APP_TITLE)
     main_win = app.window(title_re=APP_TITLE)
     main_win.set_focus()
-    keyboard.send_keys('F4')
+    keyboard.send_keys('{F4}')
     
     for attempt in range(max_retries):
 

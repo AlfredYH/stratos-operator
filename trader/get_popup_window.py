@@ -14,7 +14,8 @@ from pywinauto import Desktop
 from .reg import ocr_popup_buysell_bytes
 
 
-def capture_popup_window(class_name="#32770", index=0):
+def capture_popup_window(class_name="#32770", index=0,
+                         save_path=None) -> bytes:
     """
     定位窗口，截图，转换为灰度，并返回二进制字节流
     """
@@ -38,6 +39,13 @@ def capture_popup_window(class_name="#32770", index=0):
         img = np.array(sct_img)
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGRA2GRAY)
 
+        # --- 新增保存功能 ---
+        if save_path:
+            # 使用 cv2.imwrite 将 numpy 数组保存为本地文件
+            cv2.imwrite(save_path, img_gray)
+            print(f"截图已保存至: {save_path}")
+        # ------------------
+
     success, img_bin = cv2.imencode('.png', img_gray)
     
     if success:
@@ -45,7 +53,7 @@ def capture_popup_window(class_name="#32770", index=0):
     return None
 
 
-def get_popup_window(class_name="#32770", index=0):
+def trade_hint_popup_window_analysis(class_name="#32770", index=0):
     """
     捕获弹窗窗口，进行OCR识别并返回JSON分析结果
     """
@@ -58,5 +66,6 @@ def get_popup_window(class_name="#32770", index=0):
 
 
 if __name__ == "__main__":
-    result = get_popup_window()
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    # result = get_popup_window()
+    # print(json.dumps(result, ensure_ascii=False, indent=2))
+    result = capture_popup_window()

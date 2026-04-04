@@ -38,7 +38,7 @@ def call_ollama_ocr(image_bytes, model="deepseek-ocr:3b", host="http://localhost
         response.raise_for_status()
         result = response.json()
         response_text = result.get("response", "")
-        print(f"OCR原始响应内容: {response_text[:500]}")
+        # print(f"OCR原始响应内容: {response_text[:500]}")
         return response_text, None
     except Exception as e:
         return None, str(e)
