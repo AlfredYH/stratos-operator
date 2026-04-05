@@ -43,6 +43,11 @@ def get_stock_history(stock_code: str,
                       start_date: str = None, 
                       end_date: str = None,
                       adj_type: str = "qfq") -> pd.DataFrame:
+    
+    allowed = ("qfq","hfq","bfq")
+    if adj_type not in allowed:
+        raise ValueError(f"adjust_type 必须是 {allowed}")
+    
     """
     优化后的查询函数
     :param adj_type: 复权类型，'qfq' 对应前复权表，'bfq' 对应不复权表
@@ -110,7 +115,7 @@ if __name__ == "__main__":
     
     if not stock_data.empty:
         print(f"✅ 成功获取数据，价格类型：{adj_type}")
-        print("================================= 数据预览 =================================")
+        print("============================= 数据预览 =============================")
         print(stock_data.tail())
     else:
         print("❌ 未获取到有效数据")

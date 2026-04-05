@@ -1,5 +1,0 @@
-ocr_config:
-  model: "deepseek-ocr:3b"
-  prompt: |
-    <|grounding|>
-    OCR this image and extract as jason data
