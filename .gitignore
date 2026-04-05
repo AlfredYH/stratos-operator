@@ -1,5 +1,7 @@
 client.yaml
 *.log
+**/__pycache__/
 __pycache__/
 key.yaml
 *.db
+*.png
