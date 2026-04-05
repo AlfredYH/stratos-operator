@@ -8,6 +8,7 @@ import base64
 import re
 from loguru import logger
 
+
 def ocr_buy_in_confirmation(img_bytes: bytes) -> dict:
     url = "http://localhost:11434/api/chat"
     payload = {

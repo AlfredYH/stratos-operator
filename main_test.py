@@ -23,20 +23,3 @@ if __name__ == "__main__":
 
 
 
-    #################################################################
-    # 每日删除当前文件夹下的 libhv.数字.log 文件，防止日志文件过多占用空间
-    #################################################################
-
-
-    # 匹配规则：libhv + 点 + 纯数字 + 点 + log
-    pattern = re.compile(r"^libhv\.\d+\.log$")
-
-    # 遍历当前文件夹
-    for filename in os.listdir("."):
-        if pattern.match(filename):
-            try:
-                os.remove(filename)
-                print(f"✅ 已删除: {filename}")
-            except Exception as e:
-                print(f"❌ 删除失败 {filename}: {e}")
-

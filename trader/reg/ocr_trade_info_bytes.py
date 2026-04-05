@@ -1,7 +1,6 @@
 import requests
 import base64
 import re
-import json
 
 def ocr_trade_info_to_json(base64_str: str) -> dict:
     """
