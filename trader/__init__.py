@@ -55,7 +55,7 @@ __author__ = "Stratos Operator"
 # STRATOS TRADER Logo
 # 采用 Slant 风格，拼写：S-T-R-A-T-O-S  T-R-A-D-E-R
 logo = r"""
-   _____ ________  ___  __________  ____        
+   _____ ________  ___  __________  _______        
   / ___//_  __/ __ \/   |/_  __/ __ \/ ___/        
   \__ \  / / / /_/ / /| |  / / / / / /\__ \         
  ___/ / / / / _, _/ ___ | / / / /_/ /___/ /         
@@ -69,7 +69,7 @@ logo = r"""
                                             
     """
 # 适配不同系统的清屏
-os.system('cls' if os.name == 'nt' else 'clear')
+# os.system('cls' if os.name == 'nt' else 'clear')
 
 # 打印带颜色的 Logo (终端支持的话会显示青蓝色)
 print("\033[96m" + logo + "\033[0m")
