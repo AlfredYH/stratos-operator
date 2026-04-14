@@ -15,7 +15,7 @@ class Config(object):
 
     def _load_config(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        config_path = os.path.join(script_dir, "datacollect_config.py")
+        config_path = os.path.join(script_dir, "datacollect_config.yaml")
         with open(config_path, "r", encoding="utf-8") as f:
             self._config = yaml.safe_load(f)
 
