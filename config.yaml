@@ -1,0 +1,26 @@
+Trader1:
+  name: "Trader_1"
+  funds: 100000
+  mode: "***"
+  strategy: "Strategy_A"
+  parameters:
+      param1: 10
+      param2: 20
+
+
+
+
+
+Trader2:
+
+
+
+
+
+Trader3:
+
+
+
+
+
+Trader4:

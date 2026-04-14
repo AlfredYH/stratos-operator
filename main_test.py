@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     # operator.buy_in(stock_code="002110", quantity=100)
     dataupdate = DailyUpdate()
-    # dataupdate.get_all_stock_list() # 获取股票列表并保存到CSV文件
-    dataupdate.run_sync_process(adjust_type="bfq", debug_mode=True) # 同步不复权数据（bfq）
+    dataupdate.get_all_stock_list() # 获取股票列表并保存
+    # dataupdate.run_sync_process(adjust_type="bfq", debug_mode=True) # 同步不复权数据（bfq）
 
 
 

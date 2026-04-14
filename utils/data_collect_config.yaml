@@ -1,0 +1,24 @@
+client:
+
+  TUSHARE_TOKEN: "5eb191319dffb2bb1d87ec3cdcec2adacd2d5d7c205e5b108f080739"
+
+
+data_collect_config:
+  
+  debug_mode: False  # 是否开启调试模式，开启后会打印更多日志信息
+
+  # 数据收集的时间范围
+  start_date: "2014-01-01"
+  end_date: ""  # 不需要定义结束日期，默认为当前日期
+
+  # 数据收集的频率，当前只支持 "daily"，未来可以扩展为 "weekly"、"monthly" 等
+  frequency: "daily"
+
+  # 数据收集的股票列表
+  stock_list_source: "tushare"  # 可以是 "tushare" 或 "akshare"
+  stock_history_source: "akshare"  # 可以是 "tushare" 或 "akshare"
+
+  # 复权信息
+  adjust_type_qfq: "qfq"  # 前复权
+  adjust_type_hfq: "hfq"  # 后复权
+  adjust_type_bfq: "bfq"  # 不复权

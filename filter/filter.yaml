@@ -1,0 +1,15 @@
+filter:
+  # 筛选条件配置
+  conditions:
+    - name: "市盈率小于20"
+      type: "pe_ratio"
+      operator: "<"
+      value: 20
+    - name: "市净率小于3"
+      type: "pb_ratio"
+      operator: "<"
+      value: 3
+    - name: "流通市值大于10亿"
+      type: "circulating_market_cap"
+      operator: ">"
+      value: 1e9

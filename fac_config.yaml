@@ -1,0 +1,61 @@
+# =============================
+# 新增：画图开关
+# 新增：记录模式开关
+# =============================
+plot_result: true             # true=画图 false=不画
+record_mode: true             # true=记录模式（保存历史文件） false=只覆盖最新
+
+# 你原来的配置下面保持不变...
+enabled_factors:
+  - price
+  - ma
+  - macd
+  - bollinger
+  - volume
+  - target
+
+params:
+  ma_short: 5
+  ma_mid: 16
+  ma_long: 243
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  bb_period: 20
+  bb_dev: 2
+  volume_z_period: 20
+  target_forward_days: 5
+
+gplearn_input_features:
+  - ma_short_bias
+  - ma_mid_bias
+  - ma_long_bias
+  - ma_short_over_mid
+  - price_dif_max
+  - price_dif
+  - macd
+  - macd_slope
+  - volume_z
+  - bb_div
+  - bb_width_slope
+  - bb_close_div
+
+gplearn:
+  n_components: 10
+  generations: 60
+  population_size: 400
+  parsimony_coefficient: 0.001
+  function_set:
+    - add
+    - sub
+    - mul
+    - div
+    - sqrt
+    - log
+    - abs
+    - inv
+
+pre_process:
+  cross_section_normalize: true
+  winsorize: true
+  winsorize_quantile: [0.025, 0.975]

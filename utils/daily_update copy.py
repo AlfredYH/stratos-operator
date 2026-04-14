@@ -14,10 +14,11 @@ except ImportError:
     print("❌ 错误：找不到 data_collect.py，请确保该文件在当前目录下。")
     exit()
 
-# ===================== 1. 基础配置 =====================
+# ===================== 基础配置 =====================
 DB_NAME = "stockdata.db"
 TARGET_DATE = date.today().strftime("%Y-%m-%d")
 LIST_NAME = "stock_list.parquet"
+CONFIG_PATH = "data_collect_config.yaml"
 
 # ===================== 🔥 加速配置 =====================
 MAX_WORKERS = 4     # 线程数，根据网络调整 8~32
@@ -94,7 +95,7 @@ class DailyUpdate:
             try:
                 import tushare as ts
 
-                config_full_path = os.path.join(os.path.dirname(__file__), "key.yaml")
+                config_full_path = os.path.join(os.path.dirname(__file__), "data_collect_config.yaml")
                 with open(config_full_path, "r", encoding="utf-8") as f:
                     tushare_token = yaml.safe_load(f)["client"]["TUSHARE_TOKEN"]
 
